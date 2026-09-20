@@ -134,6 +134,42 @@ PUT /notes/1
 DELETE /notes/1
 ```
 
+## Примеры запросов
+
+### Создать тестовые данные
+
+```bash
+curl -X POST http://127.0.0.1:5000/seed
+```
+
+### Получить все заметки
+
+```bash
+curl http://127.0.0.1:5000/notes
+```
+
+### Создать заметку
+
+```bash
+curl -X POST http://127.0.0.1:5000/notes ^
+-H "Content-Type: application/json" ^
+-d "{\"title\":\"Practice\",\"content\":\"Finish Flask project\",\"user_id\":1,\"category_id\":1}"
+```
+
+### Обновить заметку
+
+```bash
+curl -X PUT http://127.0.0.1:5000/notes/1 ^
+-H "Content-Type: application/json" ^
+-d "{\"title\":\"Updated title\"}"
+```
+
+### Удалить заметку
+
+```bash
+curl -X DELETE http://127.0.0.1:5000/notes/1
+```
+
 ## Тестирование
 
 ```bash
@@ -167,3 +203,23 @@ https://github.com/scarceee/notes-api
 ## Live Demo
 
 https://notes-api-uz9n.onrender.com
+
+## Деплой на Render
+
+1. Создать репозиторий на GitHub.
+2. Загрузить проект в репозиторий.
+3. Создать Web Service на Render.
+4. Подключить GitHub-репозиторий.
+5. Использовать:
+
+Build Command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start Command:
+
+```bash
+gunicorn app:app
+```
