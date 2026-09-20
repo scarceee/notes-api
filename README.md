@@ -159,3 +159,11 @@ docker build -t notes-api .
 ```bash
 docker run -p 5000:5000 notes-api
 ```
+
+## Repository
+
+https://github.com/scarceee/notes-api
+
+## Live Demo
+
+https://notes-api-uz9n.onrender.com
